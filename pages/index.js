@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta
           name="description"
           content="Choose who is right in politics,business,media,religion and entertainment"
@@ -107,7 +107,7 @@ export default function Home() {
                 <div className="featured-card__buttons">
                   <button className="icon-button" aria-label="thumbs up">
                     <Image
-                      height={30}
+                      height={60}
                       width={30}
                       src="/thumbs-up.svg"
                       alt="thumbs up"
@@ -115,7 +115,7 @@ export default function Home() {
                   </button>
                   <button className="icon-button" aria-label="thumbs down">
                     <Image
-                      height={30}
+                      height={60}
                       width={30}
                       src="/thumbs-down.svg"
                       alt="thumbs down"
