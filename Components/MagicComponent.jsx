@@ -10,6 +10,7 @@ import { withSize } from "react-sizeme";
 
 function MagicComponent({ size }) {
   let propsSize = size.width;
+  let handleImgSizes = propsSize >= 768 ? 320 : 200;
   return (
     <div>
       <Head>
@@ -35,7 +36,6 @@ function MagicComponent({ size }) {
                 className="relative text-center flex my-3 mx-auto"
               >
                 <Image
-                  className="w-96 h-96 md:w-80 md:h-80"
                   width={handleImgSizes}
                   height={handleImgSizes}
                   src={`/${picture}`}
