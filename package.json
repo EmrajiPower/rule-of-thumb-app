@@ -5,14 +5,23 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "tailwind": "postcss ./Tailwind/tailwind.css -o ./Tailwind/main.css"
   },
   "dependencies": {
+    "@babel/core": "7.12.17",
+    "@babel/plugin-transform-react-jsx": "7.12.17",
+    "@babel/preset-react": "^7.13.13",
+    "autoprefixer": "9.8.6",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "next": "10.2.0",
     "next-images": "^1.7.0",
+    "postcss": "8.2.4",
+    "postcss-cli": "8.3.1",
+    "postcss-preset-env": "^6.7.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-sizeme": "^3.0.1"
+    "react-sizeme": "^3.0.1",
+    "tailwindcss": "2.0.2"
   }
 }
