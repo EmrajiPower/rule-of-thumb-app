@@ -4,12 +4,13 @@ import celebrityData from "../assets/data.json";
 import Head from "next/head";
 import Image from "next/image";
 
+import { handleTimePeriod } from "./Utils";
+
 import { withSize } from "react-sizeme";
 
 function MagicComponent({ size }) {
   let propsSize = size.width;
   let handleImgSizes = propsSize >= 768 ? 320 : 200;
-  let handlePaddingButtons = propsSize >= 768 ? "1rem" : "0";
   return (
     <div>
       <Head>
@@ -26,68 +27,41 @@ function MagicComponent({ size }) {
         />
       </Head>
       <h1>Previous Rulings</h1>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-        }}
-      >
+      <div className="flex flex-row flex-wrap">
         {celebrityData.data.map(
           ({ name, picture, description, lastUpdated, category }, index) => {
             return (
               <div
                 key={index}
-                style={{
-                  position: "relative",
-                  textAlign: "center",
-                  display: "flex",
-                  margin: "1rem auto",
-                }}
+                className="relative text-center flex my-3 mx-auto"
               >
                 <Image
                   width={handleImgSizes}
                   height={handleImgSizes}
                   src={`/${picture}`}
                 />
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    width: "16rem",
-                    color: "white",
-                  }}
-                >
-                  <h3 style={{ textAlign: "left" }}>{name}</h3>
-                  <label style={{ textAlign: "center", margin: "0.5rem auto" }}>
+                <div className="flex justify-center flex-col transform -translate-y-2/4 -translate-x-2/4 absolute top-2/4 left-2/4 w-64 text-white">
+                  <h3
+                    className="text-left font-semibold"
+                    style={{ textAlign: "left" }}
+                  >
+                    {name}
+                  </h3>
+                  <label className="text-center my-2 mx-auto">
                     {description.match(/.{1,48}/g)[0] + "..."}
                   </label>
-                  <label style={{ textAlign: "right", margin: "0.5rem auto" }}>
-                    {new Date().getMonth() -
-                      new Date(lastUpdated).getMonth() +
-                      12 *
-                        (new Date().getFullYear() -
-                          new Date(lastUpdated).getFullYear())}
+                  <label className="text-right my-2 mx-0">
+                    {handleTimePeriod(lastUpdated)}
                     {""} month ago in {category}
                   </label>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-end",
-                    }}
-                  >
+                  <div className="flex justify-end">
                     <button
                       className="icon-button"
                       id="action-celebrity"
                       aria-label="thumbs up"
                     >
                       <Image
-                        height={20}
+                        height={16}
                         width={24}
                         src="/thumbs-up.svg"
                         alt="thumbs up"
@@ -99,7 +73,7 @@ function MagicComponent({ size }) {
                       aria-label="thumbs down"
                     >
                       <Image
-                        height={20}
+                        height={16}
                         width={24}
                         src="/thumbs-down.svg"
                         alt="thumbs down"
