@@ -3,6 +3,7 @@ import { memo } from "react";
 import Head from "next/head";
 
 import CelebritiesComponent from "./CelebritiesComponent";
+import ContextProvider from "./provider";
 
 function MagicComponent() {
   return (

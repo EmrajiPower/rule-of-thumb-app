@@ -1,26 +1,65 @@
-import { memo } from "react";
+import { memo, useEffect, useCallback } from "react";
 import { withSize } from "react-sizeme";
+import { AppContext } from "./provider/config";
+import { HANDLE_STORE_CELEBRITIES, HANDLE_STORE_VOTES } from "./reducers/types";
 
 import celebrityData from "../assets/data.json";
 
 import Image from "next/image";
 
 import { handleTimePeriod } from "./Utils";
+import { useAppContext } from "./provider";
 
 function CelebritiesComponent({ size }) {
+  const { state, dispatch } = useAppContext();
+  let celebritiesStorage = JSON.parse(localStorage.getItem("celebrities"));
+
+  const handleGetCelebrities = useCallback(async () => {
+    await dispatch({
+      type: HANDLE_STORE_CELEBRITIES,
+      payload: celebrityData.data,
+    });
+  }, []);
+
+  useEffect(() => {
+    handleGetCelebrities();
+    //Preparando API LocalStorage para almacenar votos
+    if (celebritiesStorage && Object.values(celebritiesStorage).length) {
+      //   console.log("Pues ahí se va viendo todo: ", {
+      //     celebrityList: state.celebrities,
+      //     celebritiesStorage,
+      //   });
+      //   console.log(
+      //     "Experimento",
+      //     Object.entries(celebritiesStorage).map(([key, value]) => {
+      //       return {
+      //         key,
+      //         value,
+      //       };
+      //     })
+      //   );
+    }
+  }, []);
+
   let propsSize = size.width;
   let handleImgSizes = propsSize >= 768 ? 320 : 200;
   let handleBtnHeight = propsSize >= 768 ? 16 : 12;
   let handleBtnWidth = propsSize >= 768 ? 24 : 20;
+
   return (
     <div className="flex flex-row flex-wrap">
-      {celebrityData.data.map(
+      {state.celebrities.map(
         (
           { name, picture, description, lastUpdated, category, votes },
           index
         ) => {
+          //Mostrar un poco de la descripción
           let handleLookDescription = description.match(/.{1,48}/g)[0] + "...";
+
+          //La suma de los votos por persona
           let totalVotes = votes.positive + votes.negative;
+
+          //La cantidad de votos "+"" y "-"" por persona en %
           let totalPositives = ((100 * votes.positive) / totalVotes).toFixed(1);
           let totalNegatives = ((100 * votes.negative) / totalVotes).toFixed(1);
           return (
@@ -69,7 +108,29 @@ function CelebritiesComponent({ size }) {
                       alt="thumbs down"
                     />
                   </button>
-                  <button aria-label="thumbs down">Vote Now</button>
+                  <button
+                    aria-label="thumbs down"
+                    onClick={() => {
+                      //   localStorage.setItem(
+                      //     "celebrities",
+                      //     JSON.stringify({
+                      //       ...celebritiesStorage,
+                      //       [name]: {
+                      //         votes: {
+                      //           positive: votes.positive,
+                      //           negative: votes.negative,
+                      //         },
+                      //       },
+                      //     })
+                      //   );
+                      dispatch({
+                        type: HANDLE_STORE_VOTES,
+                        payload: 1,
+                      });
+                    }}
+                  >
+                    Vote Now
+                  </button>
                 </div>
               </div>
               <div className="flex flex-row justify-center">
