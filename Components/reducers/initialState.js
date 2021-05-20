@@ -1,4 +1,4 @@
 export default {
-  counter: 0,
+  voting: [],
   celebrities: [],
 };
