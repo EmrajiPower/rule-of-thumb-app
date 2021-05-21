@@ -2,6 +2,7 @@ import {
   HANDLE_STORE_VOTES,
   HANDLE_STORE_CELEBRITIES,
   HANDLE_UPDATE_CELEBRITIES,
+  HANDLE_VIEW_TYPE,
 } from "./types";
 
 import initialState from "../reducers/initialState";
@@ -10,10 +11,15 @@ export const componentReducer = (state = initialState, action) => {
   let payload = action.payload;
   let type = action.type;
   switch (type) {
+    case HANDLE_VIEW_TYPE:
+      return {
+        ...state,
+        typeView: payload,
+      };
     case HANDLE_STORE_CELEBRITIES: {
       return {
         ...state,
-        celebrities: action.payload,
+        celebrities: payload,
       };
     }
     case HANDLE_UPDATE_CELEBRITIES: {

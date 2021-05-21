@@ -27,6 +27,7 @@ module.exports = {
       pink: colors.pink,
       teal: "#186666",
       yellowThumb: "#F9AE2C",
+      grayThumb: "#808080",
     },
     spacing: {
       px: "1px",
@@ -135,6 +136,7 @@ module.exports = {
       md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
       lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
       xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      shadowThumb: "-30px 0px 30px -1px #888",
       "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
       inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
       none: "none",

@@ -3,7 +3,6 @@ import { memo } from "react";
 import Head from "next/head";
 
 import CelebritiesComponent from "./CelebritiesComponent";
-import ContextProvider from "./provider";
 
 function MagicComponent() {
   return (
@@ -21,7 +20,7 @@ function MagicComponent() {
           rel="stylesheet"
         />
       </Head>
-      <h1>Previous Rulings</h1>
+      <h1 className="text-3xl my-3">Previous Rulings</h1>
       <CelebritiesComponent />
     </div>
   );

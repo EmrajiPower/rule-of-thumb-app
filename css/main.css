@@ -178,7 +178,6 @@ hr[role="separator"] {
 }
 
 .hero__background {
-  position: absolute;
   left: -35vw;
   width: 160vw;
   height: 100%;
@@ -186,9 +185,10 @@ hr[role="separator"] {
 }
 
 .hero__featured-card {
-  position: relative;
   top: 5.5rem;
   left: 1rem;
+  position: absolute;
+  margin: auto;
   overflow: hidden;
   width: 55vw;
   max-height: 25rem;
@@ -209,13 +209,6 @@ hr[role="separator"] {
   left: -20%;
   width: 140%;
   height: 140%;
-  background: center no-repeat
-      linear-gradient(
-        var(--color-dark-background),
-        var(--color-dark-background)
-      ),
-    -25vw 0/160vw no-repeat url("../public/pope-francis.png");
-  filter: blur(1rem);
 }
 
 .featured-card__content {
@@ -669,6 +662,8 @@ main h2 {
   .hero__featured-card {
     left: 0;
     width: 50%;
+    z-index: 4;
+    position: absolute;
     min-width: 600px;
     max-height: unset;
     margin-top: 2.5rem;
