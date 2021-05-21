@@ -67,14 +67,14 @@ export default function Home() {
           </div>
         </nav>
         <header className="hero">
-          <img
-            className="hero__background"
-            srcSet={`/pope-francis.png 750w, /pope-francis.@2x.png 1440w`}
-            sizes="(min-width: 750px) 1440px, 100vw"
-            src={`/pope-francis.png`}
-            alt="Pope Francis"
-          />
           <div className="max-centered">
+            <img
+              className="hero__background"
+              srcSet={`/pope-francis.png 750w, /pope-francis.@2x.png 1440w`}
+              sizes="(min-width: 750px) 1440px, 100vw"
+              src={`/pope-francis.png`}
+              alt="Pope Francis"
+            />
             <div className="hero__featured-card">
               <div className="featured-card__glass-background"></div>
               <div className="featured-card__content">
@@ -107,16 +107,18 @@ export default function Home() {
                 <div className="featured-card__buttons">
                   <button className="icon-button" aria-label="thumbs up">
                     <Image
-                      height={60}
-                      width={30}
+                      height={25}
+                      className="items-center"
+                      width={25}
                       src="/thumbs-up.svg"
                       alt="thumbs up"
                     />
                   </button>
                   <button className="icon-button" aria-label="thumbs down">
                     <Image
-                      height={60}
-                      width={30}
+                      height={25}
+                      className="items-center"
+                      width={25}
                       src="/thumbs-down.svg"
                       alt="thumbs down"
                     />

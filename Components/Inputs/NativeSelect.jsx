@@ -1,17 +1,28 @@
-import React from "react";
+import { memo } from "react";
+import { useAppContext } from "../provider";
+
+import { HANDLE_VIEW_TYPE } from "../reducers/types";
 
 function NativeSelect() {
+  const { dispatch } = useAppContext();
   return (
     <div>
-      <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="opel">Opel</option>
-        <option value="audi">Audi</option>
+      <select
+        onChange={(e) => {
+          dispatch({
+            type: HANDLE_VIEW_TYPE,
+            payload: e.target.value,
+          });
+        }}
+        className="px-8 outline-black text-black"
+        name="Grid"
+        id="cars"
+      >
+        <option value="grid">Grid</option>
+        <option value="list">List</option>
       </select>
-      <input type="submit" value="Submit" />
     </div>
   );
 }
 
-export default NativeSelect;
+export default memo(NativeSelect);

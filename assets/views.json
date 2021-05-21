@@ -1,0 +1,32 @@
+{
+  "containerView": {
+    "grid": "flex flex-row flex-wrap",
+    "list": "flex flex-col text-white"
+  },
+  "celebrityContainer": {
+    "mobile": "flex justify-center",
+    "grid": "relative text-center flex my-3 mx-auto",
+    "list": "relative text-center flex flex-row w-full my-3 mx-auto"
+  },
+  "celebrityImgContainer": {
+    "grid": "h-full contents",
+    "list": "w-1/5 h-full flex"
+  },
+  "celebrityInfoContainer": {
+    "grid": "flex justify-center flex-col transform -translate-y-2/4 -translate-x-2/4 absolute top-2/4 left-2/4 w-64 text-white",
+    "list": "w-4/5 flex flex-row items-center justify-center bg-grayThumb shadow-shadowThumb z-0 opacity-70"
+  },
+  "ActionsButtonsContainer": {
+    "grid": "flex flex-row justify-center",
+    "list": "flex"
+  },
+  "childsButtonsContainer": {
+    "mobile": "h-10 absolute left-5 bottom-0 w-11/12 flex flex-row",
+    "grid": "h-10 absolute left-0 bottom-0 w-full flex flex-row",
+    "list": "flex flex-row absolute w-full h-12 bottom-0 left-0"
+  },
+  "dynamicQuoteContainer": {
+    "grid": "flex flex-col",
+    "list": "flex flex-col"
+  }
+}

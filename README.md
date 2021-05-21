@@ -10,7 +10,7 @@ Esta es una aplicación que le permite al usuario compartir sus opiniones o punt
 - **Next Js** Proporciona muchos beneficios para trabajar desde el lado del servidor ejecutando tareas de _renderizado_ desde el _runtime_ del navegador con Javascript.
 - **Tailwind** Framework de CSS que permite trabajar lading pages muy rápido gracias a su tipografía intuitiva y sencilla.
 - **Swiper.js** Utilidad para que permite crear swippers tipo galería de forma sencilla y con alto performance para React Js.
-- **react-sizeme** Utilidad para facilitar validaciones de media queries por medio de los _props_ de forma practica con JSX.
+- **react-sizeme** Utilidad para facilitar validaciones de media queries por medio de los _props_ de forma practica con JSX. **Nota**: El uso cuenta cuando los componentes requieren de dinamismo con sus estilos pero éste proporcionar por _props_ los argumentos no se pueden cambiar debidamente con css-in-js o tailwind.
 
 ### Implementación
 
