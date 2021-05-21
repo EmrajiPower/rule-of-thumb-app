@@ -93,6 +93,12 @@ La app se encuentra en este link: https://rule-of-thumb-app.vercel.app/
 - **Google Lighthouse** Buen indexamiento SEO, performance y accesbilidad.seo
   ![Desktop](./public/lighthouse-desktop.png)
 
+- **Git Workflow** Las `Líneas Verdes` son el setup del Proyecto e instalación de las librerías a utilizar, `Líneas Amarillas` el proceso de codificación y refactorización de algunas partes del código, `Líneas Azules` la disposicion y arreglo de hotfix para entrega de la prueba.
+  ![Desktop](./public/git_workflow.png)
+
+- **SEO Stragegy** Aprovechando el feature de indexación mejorada para las páginas web con Next.js se puede crear un Header para configurar SEO por cada ruta estática o dinámica en el proyecto.
+  ![Desktop](./public/seo_stragegy.png)
+
 ### Bloqueos y Observaciones
 
 - Gestión de tiempo para desarrollar un sistema más modular
